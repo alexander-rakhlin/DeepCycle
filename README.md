@@ -1,7 +1,7 @@
 # DeepCycle
 
-This README outlines steps required to reproduce approach from *DeepCycle* manuscript.  
- 
+This README outlines steps required to reproduce approach from *DeepCycle* manuscript.
+
 #### Requirements
 [keras](https://keras.io), [cv2](https://pypi.org/project/opencv-python/), [albumentations](https://github.com/albumentations-team/albumentations), [classification_models](https://github.com/qubvel/classification_models)  
 Install customized version of [SOMPY](https://github.com/alexander-rakhlin/SOMPY)
@@ -32,8 +32,15 @@ Calculates intensity statistics and adds virtual class `1-4` to each tracked cel
 `python model_train.py`  
 Trains the model  on curated tracks (less double division tracks) using double division tracks as validation set. Saves best models in `checkpoints` dir
 6. Generate cell descriptors with `checkpoint.r34.sz48.03-0.73.hdf5` as default model:
-    - `python encode.py --mode encode_val`  from validation set (double division tracks) only
-    - `python encode.py --mode encode_all`  from all available tracks  
-Descriptors are saved in `data/Timelapse_2019/descriptors.r34.sz48.pkl` and `data/Timelapse_2019/descriptors_all.r34.sz48.pkl`    
+    - from validation set (double division tracks) only:  
+    `python encode.py --mode encode_val`  
+    - from all available tracks:  
+    `python encode.py --mode encode_all`  
+Descriptors are saved in `descriptors.r34.sz48.pkl` and `descriptors_all.r34.sz48.pkl` in `data/Timelapse_2019` dir.    
+    
 7. `cd ..`   
 8. start `jupyter notebook` and open `timelapse_projection2019.ipynb`  
+
+
+  
+![](./images/SOM.png) 
