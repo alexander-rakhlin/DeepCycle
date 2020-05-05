@@ -2,11 +2,11 @@
 
 This README outlines steps required to reproduce approach from *DeepCycle* manuscript.  
  
-####Requirements
+#### Requirements
 [keras](https://keras.io), [cv2](https://pypi.org/project/opencv-python/), [albumentations](https://github.com/albumentations-team/albumentations), [classification_models](https://github.com/qubvel/classification_models)  
 Install customized version of [SOMPY](https://github.com/alexander-rakhlin/SOMPY)
 
-####How ro run
+#### How ro run
 1. Download data
 
 2. Unzip to `data/Timelapse_2019` folder preserving directory structure. You will have: 
