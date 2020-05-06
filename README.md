@@ -7,8 +7,9 @@ This README outlines steps required to reproduce approach from *DeepCycle* manus
 Install customized version of [SOMPY](https://github.com/alexander-rakhlin/SOMPY)
 
 #### How ro run
-1. Download data
-
+1. Download data and models, descriptors etc.:  
+https://www.ebi.ac.uk/biostudies/studies/S-BSST323?query=deepcycle  
+<Luca: another link goes here>
 2. Unzip to `data/Timelapse_2019` folder preserving directory structure. You will have: 
     ```
     root|
