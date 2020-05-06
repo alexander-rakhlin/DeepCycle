@@ -44,6 +44,5 @@ Descriptors are saved in `descriptors.r34.sz48.pkl` and `descriptors_all.r34.sz4
 8. `cd ..`   
 9. start `jupyter notebook` and open `timelapse_projection2019.ipynb`  
 
-
   
 ![](./images/SOM.png) 
