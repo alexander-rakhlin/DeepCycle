@@ -21,6 +21,8 @@ def get_frame_average(img, yx, sz, fun=np.median):
 
 
 def make_division_adjusted_tracks():
+    """Align 1000 curated tracks based on division events"""
+
     curated_tracks = sorted(pd.read_csv(DATA_ROOT / 'curated_tracks.csv', header=None).astype(int).values.flatten())
     df = pd.read_csv(DATA_ROOT / 'Spots in tracks statistics.csv', na_values='None', delimiter='\t').dropna()
     df = df[df['TRACK_ID'].isin(curated_tracks)]
@@ -172,12 +174,14 @@ def add_classes(df, gfp_intensity_col, cy3_intensity_col, class_col_prefix='', n
 
 
 if __name__ == '__main__':
-    df = pd.read_csv(DATA_ROOT / 'statistics_clean.csv')
-    df = add_mean_std(df, n_frames=None, verbose=True)
-
-    df = add_intensities(df, sz=20, n_frames=None, verbose=True)
-
-    df = add_classes(df, gfp_intensity_col='GFP_20', cy3_intensity_col='Cy3_20',
-                     class_col_prefix='sq20', n_green=2, n_red=2)
-
-    df.to_csv(DATA_ROOT / 'statistics_mean_std.csv', index=False, float_format='%.3f')
+    make_division_adjusted_tracks()
+    clean_df()
+    # df = pd.read_csv(DATA_ROOT / 'statistics_clean.csv')
+    # df = add_mean_std(df, n_frames=None, verbose=True)
+    #
+    # df = add_intensities(df, sz=20, n_frames=None, verbose=True)
+    #
+    # df = add_classes(df, gfp_intensity_col='GFP_20', cy3_intensity_col='Cy3_20',
+    #                  class_col_prefix='sq20', n_green=2, n_red=2)
+    #
+    # df.to_csv(DATA_ROOT / 'statistics_mean_std.csv', index=False, float_format='%.3f')
