@@ -245,6 +245,8 @@ def project_onto_fluo_plane(intensities, *tracks, log_const=300):
                          ratio=5,
                          joint_kws={'gridsize': 150},
                          marginal_kws={'color': 'green'})
+    cbar_ax = grid.fig.add_axes([.85, .62, .03, .2])  # x, y, width, height
+    plt.colorbar(cax=cbar_ax)
     plt.setp(grid.ax_marg_y.patches, color='r')
 
     for track, color, title in tracks:
