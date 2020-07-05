@@ -5,6 +5,7 @@ import numpy as np
 import pandas as pd
 from scipy import interpolate
 from scipy.stats import spearmanr, kendalltau
+from const import double_division_tracks
 
 
 def umap_transform(data, n_neighbors=15, min_dist=0.1, n_components=2, metric='euclidean'):
@@ -267,7 +268,7 @@ def project_onto_fluo_plane(intensities, *tracks, log_const=300):
     plt.show()
 
 
-def correlation_plot(df, df_index, som_bmu, double_division_tracks, gfp_key, cy3_key):
+def correlation_plot(df, df_index, som_bmu, gfp_key, cy3_key):
     def scale(arr):
         return (arr - np.min(arr)) / (np.max(arr) - np.min(arr))
 
