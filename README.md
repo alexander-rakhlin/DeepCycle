@@ -8,7 +8,6 @@ Install customized version of [SOMPY](https://github.com/alexander-rakhlin/SOMPY
 
 #### How ro run
 1. Download data from [EBI BioStudies repository](https://www.ebi.ac.uk/biostudies/studies/S-BSST323) and deep learning models from [our EMBL hosting](https://oc.embl.de/index.php/s/aTtsCjYqGuI4cqj)
-<Luca: another link goes here>
 2. Unzip to `data/Timelapse_2019` folder preserving directory structure. You will have: 
     ```
     root|
