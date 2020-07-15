@@ -48,4 +48,4 @@ if __name__ == '__main__':
         # plt.scatter(embeddings_preds_all[:, 0], embeddings_preds_all[:, 1])
         # plt.show()
 
-        savez_compressed(DATA_ROOT / f'_embeddings_preds_all_batch{i}.npz', embeddings_preds_all)
+        savez_compressed(DATA_ROOT / f'embeddings_preds_all_batch{i}.npz', embeddings_preds_all)
